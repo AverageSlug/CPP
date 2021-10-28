@@ -54,7 +54,8 @@ static void	search_contact(phonebook phonebook, int n)
 	}
 	print_loop(phonebook, n);
 	std::cout << "Please enter the index of the contact you wish to view: ";
-	std::cin >> k;
+	std::cin >> std::ws;
+	std::getline(std::cin, k);
 	j = 0;
 	if (is_digit(k.data()))
 	{
@@ -74,19 +75,20 @@ static void	add_contact(phonebook *phonebook, int n)
 	std::string	buff;
 
 	std::cout << "Please enter your first name: ";
-	std::cin >> buff;
+	std::cin >> std::ws;
+	std::getline(std::cin, buff);
 	phonebook->cdata[n % 8].set_data(0, buff);
 	std::cout << "Please enter your last name: ";
-	std::cin >> buff;
+	std::getline(std::cin, buff);
 	phonebook->cdata[n % 8].set_data(1, buff);
 	std::cout << "Please enter your nickname: ";
-	std::cin >> buff;
+	std::getline(std::cin, buff);
 	phonebook->cdata[n % 8].set_data(2, buff);
 	std::cout << "Please enter your phone number: ";
-	std::cin >> buff;
+	std::getline(std::cin, buff);
 	phonebook->cdata[n % 8].set_data(3, buff);
 	std::cout << "Please enter your darkest secret: ";
-	std::cin >> buff;
+	std::getline(std::cin, buff);
 	phonebook->cdata[n % 8].set_data(4, buff);
 }
 

@@ -1,14 +1,12 @@
-NAME		=	brainz
+NAME		=	karenFilter
 
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
+				Karen.cpp
 
-INC			=	Zombie.hpp
+INC			=	Karen.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 

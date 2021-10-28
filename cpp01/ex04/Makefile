@@ -1,20 +1,15 @@
-NAME		=	brainz
+NAME		=	replace
 
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-SRCS		=	main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
-
-INC			=	Zombie.hpp
+SRCS		=	main.cpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
 all :		$(NAME)
 
-$(NAME)	: $(OBJS) $(INC)
+$(NAME)	: $(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean	:

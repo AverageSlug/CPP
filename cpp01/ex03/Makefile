@@ -1,14 +1,16 @@
-NAME		=	brainz
+NAME		=	violence
 
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
+				Weapon.cpp \
+				HumanA.cpp \
+				HumanB.cpp
 
-INC			=	Zombie.hpp
+INC			=	Weapon.hpp \
+				HumanA.hpp \
+				HumanB.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
