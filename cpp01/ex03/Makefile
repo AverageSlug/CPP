@@ -1,7 +1,7 @@
 NAME		=	violence
 
-CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CXX			=	clang++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
 				Weapon.cpp \
@@ -17,7 +17,7 @@ OBJS		= 	$(SRCS:.cpp=.o)
 all :		$(NAME)
 
 $(NAME)	: $(OBJS) $(INC)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean	:
 			rm -f $(OBJS)

@@ -102,7 +102,8 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "Please enter a command: ";
-		std::cin >> buff;
+		std::cin >> std::ws;
+		std::getline(std::cin, buff);
 		if (!buff.compare("EXIT"))
 			return (0);
 		else if (!buff.compare("ADD"))

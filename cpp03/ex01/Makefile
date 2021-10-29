@@ -1,15 +1,20 @@
-NAME		=	brain
+NAME		=	ScavTrap
 
 CXX			=	clang++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp \
+				ClapTrap.cpp \
+				ScavTrap.cpp
+
+INC			=	ClapTrap.hpp \
+				ScavTrap.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
 all :		$(NAME)
 
-$(NAME)	: $(OBJS)
+$(NAME)	: $(OBJS) $(INC)
 			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean	:
