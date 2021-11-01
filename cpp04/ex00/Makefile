@@ -1,14 +1,20 @@
-NAME		=	phonebook
+NAME		=	polymorph
 
 CXX			=	clang++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
-				phonebook.cpp \
-				contact.cpp
+				Animal.cpp \
+				Dog.cpp \
+				Cat.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp
 
-INC			=	phonebook.hpp \
-				contact.hpp
+INC			=	Animal.hpp \
+				Dog.hpp \
+				Cat.hpp \
+				WrongAnimal.hpp \
+				WrongCat.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 

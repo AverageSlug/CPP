@@ -1,14 +1,22 @@
-NAME		=	phonebook
+NAME		=	interface
 
 CXX			=	clang++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
-				phonebook.cpp \
-				contact.cpp
+				AMateria.cpp \
+				Ice.cpp \
+				Cure.cpp \
+				Character.cpp \
+				MateriaSource.cpp
 
-INC			=	phonebook.hpp \
-				contact.hpp
+INC			=	AMateria.hpp \
+				ICharacter.hpp \
+				IMateriaSource.hpp \
+				Ice.hpp \
+				Cure.hpp \
+				Character.hpp \
+				MateriaSource.hpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
