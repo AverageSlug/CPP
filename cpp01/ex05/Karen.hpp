@@ -9,8 +9,7 @@ class Karen {
 		void	complain(std::string level);
 
 	private:
-		typedef struct	s_karen
-		{
+		typedef struct	s_karen {
 			std::string	level;
 			void	(Karen::*c)(void);
 		}				t_karen;

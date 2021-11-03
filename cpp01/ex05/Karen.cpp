@@ -15,11 +15,11 @@ Karen::~Karen(void) {
 }
 
 void	Karen::complain(std::string level) {
-	Karen	*dn;
+	Karen	dn;
 
 	for (int i = 0; i < 4; i++) {
 		if (level == kraken[i].level)
-			(dn->*kraken[i].c)();
+			(dn.*kraken[i].c)();
 	}
 }
 

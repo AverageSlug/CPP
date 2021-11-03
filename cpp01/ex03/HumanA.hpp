@@ -10,7 +10,7 @@ class HumanA {
 		void	setWeapon(Weapon &type);
 	private:
 		std::string _name;
-		Weapon *_weapon;
+		Weapon &_weapon;
 		HumanA(void);
 };
 

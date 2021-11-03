@@ -14,6 +14,3 @@ void	HumanB::attack(void) {
 void	HumanB::setWeapon(Weapon &type) {
 	_weapon = &type;
 }
-
-HumanB::HumanB(void) {
-}

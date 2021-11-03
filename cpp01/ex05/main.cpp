@@ -1,12 +1,11 @@
 #include "Karen.hpp"
 
 int	main(void) {
-	Karen	v3;
+	Karen	v2;
 
-	v3.complain("DEBUG");
-	v3.complain("INFO");
-	v3.complain("WARNING");
-	v3.complain("ERROR");
-	v3.complain("KEKW");
+	v2.complain("DEBUG");
+	v2.complain("INFO");
+	v2.complain("WARNING");
+	v2.complain("ERROR");
 	return (0);
 }

@@ -15,7 +15,7 @@ Karen::~Karen(void) {
 }
 
 void	Karen::complain(std::string level) {
-	Karen	*dn;
+	Karen	dn;
 	int		i;
 
 	for (i = 0; i < 4; i++) {
@@ -25,16 +25,16 @@ void	Karen::complain(std::string level) {
 	switch (i) {
 	case 0:
 		std::cout << "[DEBUG]" << std::endl;
-		(dn->*kraken[0].c)();
+		(dn.*kraken[0].c)();
 	case 1:
 		std::cout << "[INFO]" << std::endl;
-		(dn->*kraken[1].c)();
+		(dn.*kraken[1].c)();
 	case 2:
 		std::cout << "[WARNING]" << std::endl;
-		(dn->*kraken[2].c)();
+		(dn.*kraken[2].c)();
 	case 3:
 		std::cout << "[ERROR]" << std::endl;
-		(dn->*kraken[3].c)();
+		(dn.*kraken[3].c)();
 		break ;
 	default:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
