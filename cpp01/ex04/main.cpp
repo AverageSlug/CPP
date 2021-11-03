@@ -25,10 +25,12 @@ int	main(int argc, char **argv) {
 	getline(file, str);
 	while (file)
 	{
-		while ((n = str.find(argv[2])) >= 0)
+		n = 0;
+		while ((n = str.find(argv[2], n)) >= 0)
 		{
 			str.erase(n, strlen(argv[2]));
 			str.insert(n, argv[3]);
+			n += strlen(argv[3]);
 		}
 		file2 << str;
 		getline(file, str);
