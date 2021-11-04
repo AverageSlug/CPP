@@ -61,42 +61,42 @@ bool	Fixed::operator!=(const Fixed &b) const {
 }
 
 Fixed&	Fixed::operator+(const Fixed &b) {
-	_fpv += b.getRawBits();
+	_fpv = this->toFloat() + b.toFloat();
 	return (*this);
 }
 
 Fixed&	Fixed::operator-(const Fixed &b) {
-	_fpv -= b.getRawBits();
+	_fpv = this->toFloat() - b.toFloat();
 	return (*this);
 }
 
 Fixed&	Fixed::operator*(const Fixed &b) {
-	_fpv *= b.getRawBits();
+	_fpv = this->toFloat() * b.toFloat();
 	return (*this);
 }
 
 Fixed&	Fixed::operator/(const Fixed &b) {
-	_fpv /= b.getRawBits();
-	return (*this);
-}
-
-Fixed&	Fixed::operator++(int) {
-	_fpv++;
-	return (*this);
-}
-
-Fixed&	Fixed::operator--(int) {
-	_fpv--;
+	_fpv = this->toFloat() / b.toFloat();
 	return (*this);
 }
 
 Fixed	Fixed::operator++() {
+	_fpv++;
+	return (*this);
+}
+
+Fixed	Fixed::operator--() {
+	_fpv--;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) {
 	Fixed temp = *this;
 	_fpv++;
 	return (temp);
 }
 
-Fixed	Fixed::operator--() {
+Fixed	Fixed::operator--(int) {
 	Fixed temp = *this;
 	_fpv--;
 	return (temp);

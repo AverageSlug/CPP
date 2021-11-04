@@ -21,10 +21,10 @@ class Fixed {
 		Fixed&			operator-(const Fixed &b);
 		Fixed&			operator*(const Fixed &b);
 		Fixed&			operator/(const Fixed &b);
-		Fixed&			operator++(int);
-		Fixed&			operator--(int);
 		Fixed			operator++();
 		Fixed			operator--();
+		Fixed			operator++(int);
+		Fixed			operator--(int);
 		static Fixed&	min(Fixed &a, Fixed &b);
 		static Fixed&	max(Fixed &a, Fixed &b);
 		const static Fixed&	min(const Fixed &a, const Fixed &b);
