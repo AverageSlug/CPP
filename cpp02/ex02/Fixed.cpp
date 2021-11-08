@@ -1,7 +1,6 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) {
-	_fpv = 0;
+Fixed::Fixed(void) : _fpv(0) {
 }
 
 Fixed::~Fixed(void) {
@@ -61,22 +60,22 @@ bool	Fixed::operator!=(const Fixed &b) const {
 }
 
 Fixed&	Fixed::operator+(const Fixed &b) {
-	_fpv = this->toFloat() + b.toFloat();
+	_fpv += b.getRawBits();
 	return (*this);
 }
 
 Fixed&	Fixed::operator-(const Fixed &b) {
-	_fpv = this->toFloat() - b.toFloat();
+	_fpv -= b.getRawBits();
 	return (*this);
 }
 
 Fixed&	Fixed::operator*(const Fixed &b) {
-	_fpv = this->toFloat() * b.toFloat();
+	_fpv *= b.toFloat();
 	return (*this);
 }
 
 Fixed&	Fixed::operator/(const Fixed &b) {
-	_fpv = this->toFloat() / b.toFloat();
+	_fpv /= b.toFloat();
 	return (*this);
 }
 
@@ -114,7 +113,7 @@ Fixed&	Fixed::max(Fixed &a, Fixed &b) {
 	return (b);
 }
 
-const Fixed&	Fixed::min(const Fixed &a, const Fixed &b){
+const Fixed&	Fixed::min(const Fixed &a, const Fixed &b) {
 	if (a <= b)
 		return (a);
 	return (b);
