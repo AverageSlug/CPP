@@ -15,7 +15,7 @@ Ice&	Ice::operator=(const Ice &a) {
 	return (*this);
 }
 
-Ice	*Ice::clone() const {
+Ice		*Ice::clone() const {
 	Ice *m = new Ice(*this);
 	return (m);
 }

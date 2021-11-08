@@ -16,7 +16,7 @@ Cure&	Cure::operator=(const Cure &a) {
 }
 
 Cure	*Cure::clone() const {
-	Cure *m = new Cure();
+	Cure *m = new Cure(*this);
 	return (m);
 }
 

@@ -1,8 +1,7 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _Gate(false) {
 	std::cout << "ScavTrap Constructor Called" << std::endl;
-	_Gate = false;
 }
 
 ScavTrap::~ScavTrap(void) {

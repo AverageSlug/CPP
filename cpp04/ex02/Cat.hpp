@@ -3,7 +3,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : public AAnimal {
+class Cat : public Animal {
 	public:
 		Cat(void);
 		virtual	~Cat(void);

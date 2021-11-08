@@ -13,7 +13,8 @@ class Character : public ICharacter {
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter &target);
 	private:
-		AMateria *_inventory[4];
+		AMateria	*_inventory[4];
+		bool		_num_materia[4];
 		std::string _name;
 		Character(void);
 };

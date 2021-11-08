@@ -1,8 +1,7 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name) {
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name), _Name(name) {
 	std::cout << "DiamondTrap Constructor Called" << std::endl;
-	_Name = name;
 	ClapTrap::_Name = name + "_clap_name";
 	_Hitpoints = FragTrap::_Hitpoints;
 	_Energy_points = ScavTrap::_Energy_points;

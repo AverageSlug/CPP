@@ -59,24 +59,28 @@ bool	Fixed::operator!=(const Fixed &b) const {
 	return (false);
 }
 
-Fixed&	Fixed::operator+(const Fixed &b) {
-	_fpv += b.getRawBits();
-	return (*this);
+Fixed	Fixed::operator+(const Fixed &b) {
+	Fixed tmp;
+	tmp._fpv = _fpv + b.getRawBits();
+	return (tmp);
 }
 
-Fixed&	Fixed::operator-(const Fixed &b) {
-	_fpv -= b.getRawBits();
-	return (*this);
+Fixed	Fixed::operator-(const Fixed &b) {
+	Fixed tmp;
+	tmp._fpv = _fpv - b.getRawBits();
+	return (tmp);
 }
 
-Fixed&	Fixed::operator*(const Fixed &b) {
-	_fpv *= b.toFloat();
-	return (*this);
+Fixed	Fixed::operator*(const Fixed &b) {
+	Fixed tmp;
+	tmp._fpv = _fpv * b.toFloat();
+	return (tmp);
 }
 
-Fixed&	Fixed::operator/(const Fixed &b) {
-	_fpv /= b.toFloat();
-	return (*this);
+Fixed	Fixed::operator/(const Fixed &b) {
+	Fixed tmp;
+	tmp._fpv = _fpv / b.toFloat();
+	return (tmp);
 }
 
 Fixed	Fixed::operator++() {
@@ -134,11 +138,11 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 float	Fixed::toFloat(void) const {
-	return ((float)_fpv / (float)(1 << _fbits));
+	return ((float)_fpv / (1 << _fbits));
 }
 
 int		Fixed::toInt(void) const {
-	return ((int)_fpv / (int)(1 << _fbits));
+	return (_fpv / (1 << _fbits));
 }
 
 std::ostream&	operator<<(std::ostream &o, Fixed const &i) {
