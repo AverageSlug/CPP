@@ -38,11 +38,11 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 float	Fixed::toFloat(void) const {
-	return ((float)_fpv / (float)(1 << _fbits));
+	return ((float)_fpv / (1 << _fbits));
 }
 
 int		Fixed::toInt(void) const {
-	return ((int)_fpv / (int)(1 << _fbits));
+	return (_fpv / (1 << _fbits));
 }
 
 std::ostream&	operator<<(std::ostream &o, Fixed const &i) {
