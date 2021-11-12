@@ -11,6 +11,7 @@ Animal::~Animal(void) {
 
 Animal::Animal(const Animal &cpy) {
 	*this = cpy;
+	std::cout << "Animal copy constructor called" << std::endl;
 }
 
 Animal&	Animal::operator=(const Animal &a) {

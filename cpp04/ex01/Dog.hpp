@@ -6,10 +6,10 @@
 class Dog : public Animal {
 	public:
 		Dog(void);
-		virtual	~Dog(void);
+		~Dog(void);
 		Dog(const Dog &cpy);
 		Dog&	operator=(const Dog &a);
-		virtual void	makeSound() const;
+		void	makeSound() const;
 	private:
 		Brain	*_smart;
 };
