@@ -22,7 +22,7 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource &a) {
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
-	if (_num_materia < 4)
+	if (m && _num_materia < 4)
 		_inventory[_num_materia++] = m->clone();
 }
 
@@ -31,5 +31,5 @@ AMateria* MateriaSource::createMateria(std::string const &type) {
 	while(++i < _num_materia)
 		if (!_inventory[i]->getType().compare(type))
 			return(_inventory[i]->clone());
-	return (0);
+	return (NULL);
 }

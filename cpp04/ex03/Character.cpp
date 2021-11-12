@@ -33,7 +33,7 @@ std::string const &Character::getName() const {
 
 void Character::equip(AMateria *m) {
 	int i = -1;
-	while (++i < 4)
+	while (m && ++i < 4)
 		if (!_num_materia[i]) {
 			_inventory[i] = m->clone();
 			_num_materia[i] = true;
