@@ -11,12 +11,13 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy) : Form(
 }
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm &a) {
+	(void)a;
 	return (*this);
 }
 
-void	RobotomyRequestForm::doAction(Bureaucrat const &executor) const {
+void	RobotomyRequestForm::doAction() const {
 	srand(time(NULL));
-	if (rand() > (RAND_MAX + 1) / 2)
+	if (rand() > RAND_MAX / 2)
 		std::cout << _target << " was successfully robotomized!" << std::endl;
 	else
 		std::cout << _target << "'s robotomization failed" << std::endl;

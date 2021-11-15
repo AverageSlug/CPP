@@ -11,10 +11,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy) :
 }
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationForm &a) {
+	(void)a;
 	return (*this);
 }
 
-void	ShrubberyCreationForm::doAction(Bureaucrat const &executor) const {
+void	ShrubberyCreationForm::doAction() const {
 	std::fstream f;
 	f.open(_target + "_shrubbery", std::ios::out);
 	f << "                                              .    " << std::endl;

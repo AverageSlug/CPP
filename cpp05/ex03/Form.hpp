@@ -6,8 +6,9 @@ class Bureaucrat;
 
 class Form {
 	public:
+		Form();
 		Form(std::string const & name, int const grade_to_sign, int const grade_to_exec);
-		~Form();
+		virtual ~Form();
 		Form(const Form &cpy);
 		Form&	operator=(const Form &a);
 		bool			getSignature() const;
@@ -15,8 +16,8 @@ class Form {
 		int				getGradetoSign() const;
 		int				getGradetoExec() const;
 		void			beSigned(Bureaucrat & B);
-	protected:
-		Form();
+		void			execute(Bureaucrat const & executor) const;
+		virtual void	doAction() const = 0;
 	private:
 		bool	_signature;
 		std::string const _name;
@@ -25,13 +26,13 @@ class Form {
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return ("Form: Grade too high");
+					return ("Form::GradeTooHighException");
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return ("Form: Grade too low");
+					return ("Form::GradeTooLowException");
 				}
 		};
 };

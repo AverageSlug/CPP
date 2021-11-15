@@ -9,7 +9,7 @@ class ShrubberyCreationForm : public Form {
 		~ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const ShrubberyCreationForm &cpy);
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm &a);
-		void	doAction(Bureaucrat const & executor) const;
+		void	doAction() const;
 	private:
 		std::string	_target;
 };

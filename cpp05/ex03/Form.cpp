@@ -56,7 +56,7 @@ void		Form::execute(Bureaucrat const & executor) const {
 		throw GradeTooLowException();
 		return ;
 	}
-	doAction(executor);
+	doAction();
 }
 
 std::ostream&	operator<<(std::ostream &o, Form const &i) {

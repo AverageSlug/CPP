@@ -1,26 +1,20 @@
 #include "Bureaucrat.hpp"
 	
-Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name) {
-	try {
-		_grade = grade;
-		if (_grade < 1)
-			throw GradeTooHighException();
-		if (_grade > 150)
-			throw GradeTooLowException();
-	}
-	catch (GradeTooHighException& H) {
-		std::cout << H.what() << std::endl;
-	}
-	catch (GradeTooLowException& L) {
-		std::cout << L.what() << std::endl;
-	}
+Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name), _grade(grade) {
+	if (_grade < 1)
+		throw GradeTooHighException();
+	if (_grade > 150)
+		throw GradeTooLowException();
 }
 
-Bureaucrat::~Bureaucrat(void) {
+Bureaucrat::~Bureaucrat() {
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &cpy) {
-	*this = cpy;
+Bureaucrat::Bureaucrat(const Bureaucrat &cpy) : _name(cpy._name), _grade(cpy._grade) {
+	if (_grade < 1)
+		throw GradeTooHighException();
+	if (_grade > 150)
+		throw GradeTooLowException();
 }
 
 Bureaucrat &	Bureaucrat::operator=(const Bureaucrat &a) {
@@ -36,26 +30,16 @@ int				Bureaucrat::getGrade() const {
 	return (_grade);
 }
 
-void			Bureaucrat::incGrade(unsigned int amount) {
-	try {
-		_grade -= amount;
-		if (_grade < 1)
-			throw GradeTooHighException();
-	}
-	catch (GradeTooHighException& H) {
-		std::cout << H.what() << std::endl;
-	}
+void			Bureaucrat::incGrade() {
+	_grade--;
+	if (_grade < 1)
+		throw GradeTooHighException();
 }
 
-void			Bureaucrat::decGrade(unsigned int amount) {
-	try {
-		_grade += amount;
-		if (_grade > 150)
-			throw GradeTooLowException();
-	}
-	catch (GradeTooLowException& L) {
-		std::cout << L.what() << std::endl;
-	}
+void			Bureaucrat::decGrade() {
+	_grade++;
+	if (_grade > 150)
+		throw GradeTooLowException();
 }
 
 std::ostream&	operator<<(std::ostream &o, Bureaucrat const &i) {
