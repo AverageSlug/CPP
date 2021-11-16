@@ -12,7 +12,14 @@ class Intern {
 		~Intern(void);
 		Intern(const Intern &cpy);
 		Intern&	operator=(const Intern &a);
-		void	makeForm(std::string const & form, std::string const & target);
+		Form	*makeForm(std::string const & form, std::string const & target);
+		typedef Form* (Intern::*fp)(std::string);
+	private:
+		std::string _form[3];
+		fp _fnc[3];
+		Form*	_ShrubberyCreationForm(std::string target);
+		Form*	_RobotomyRequestForm(std::string target);
+		Form*	_PresidentialPardonForm(std::string target);
 };
 
 #endif

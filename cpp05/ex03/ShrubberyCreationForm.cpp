@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) : Form("Presidential Pardon Form", 25, 5), _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) : Form("Shrubbery Creation Form", 145, 137), _target(target) {
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {
@@ -45,6 +45,6 @@ void	ShrubberyCreationForm::doAction() const {
 	f << "                    .%@@@@%::;                     " << std::endl;
 	f << "                    ;%@@@@%::;.                    " << std::endl;
 	f << "                   ;%@@@@%%:;;;.                   " << std::endl;
-	f << "               ...;%@@@@@%%:;;;;,..                " << std::endl;
+	f << "               ...;%@@@@@%%:;;;;,..                ";
 	f.close();
 }

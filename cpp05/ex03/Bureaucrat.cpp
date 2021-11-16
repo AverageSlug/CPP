@@ -50,6 +50,10 @@ void			Bureaucrat::signForm(Form & F) {
 		std::cout << _name << " cannot sign " << F.getName() << " because their grade is too low" << std::endl;
 		return ;
 	}
+	catch (Form::FormAlreadySignedException& S) {
+		std::cout << S.what() << std::endl;
+		return ;
+	}
 	std::cout << _name << " signs " << F.getName() << std::endl;
 }
 
@@ -59,6 +63,10 @@ void		Bureaucrat::executeForm(Form const & form) {
 	}
 	catch (GradeTooLowException& L) {
 		std::cout << _name << " cannot execute " << form.getName() << " because their grade is too low" << std::endl;
+	}
+	catch (Form::FormNotSignedException& S) {
+		std::cout << S.what() << std::endl;
+		return ;
 	}
 }
 

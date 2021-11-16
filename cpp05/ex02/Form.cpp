@@ -48,15 +48,18 @@ void			Form::beSigned(Bureaucrat &B) {
 		std::cout << L.what() << std::endl;
 		return ;
 	}
-	_signature = true;
+	if (_signature)
+		throw FormAlreadySignedException();
+	else
+		_signature = true;
 }
 
 void		Form::execute(Bureaucrat const & executor) const {
-	if (executor.getGrade() > _grade_to_sign) {
+	if (!_signature)
+		throw FormNotSignedException();
+	if (executor.getGrade() > _grade_to_exec)
 		throw GradeTooLowException();
-		return ;
-	}
-	doAction(executor);
+	doAction();
 }
 
 std::ostream&	operator<<(std::ostream &o, Form const &i) {

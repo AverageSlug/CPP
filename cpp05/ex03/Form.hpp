@@ -18,23 +18,35 @@ class Form {
 		void			beSigned(Bureaucrat & B);
 		void			execute(Bureaucrat const & executor) const;
 		virtual void	doAction() const = 0;
-	private:
-		bool	_signature;
-		std::string const _name;
-		int			const _grade_to_sign;
-		int			const _grade_to_exec;
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return ("Form::GradeTooHighException");
+					return ("Form: Grade too high");
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return ("Form::GradeTooLowException");
+					return ("Form: Grade too low");
 				}
 		};
+		class FormAlreadySignedException : public std::exception {
+			public:
+				virtual const char* what() const throw() {
+					return ("Form: Already signed");
+				}
+		};
+		class FormNotSignedException : public std::exception {
+			public:
+				virtual const char* what() const throw() {
+					return ("Form: Not signed");
+				}
+		};
+	private:
+		bool	_signature;
+		std::string const _name;
+		int			const _grade_to_sign;
+		int			const _grade_to_exec;
 };
 
 std::ostream&	operator<<(std::ostream &o, Form const &i);

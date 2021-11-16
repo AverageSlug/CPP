@@ -11,9 +11,10 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cpy
 }
 
 PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm &a) {
+	(void)a;
 	return (*this);
 }
 
-void	PresidentialPardonForm::doAction(Bureaucrat const &executor) const {
-	std::cout << _target << "was pardoned by Zafod Beeblebrox" << std::endl; 
+void	PresidentialPardonForm::doAction() const {
+	std::cout << _target << " was pardoned by Zafod Beeblebrox" << std::endl; 
 }

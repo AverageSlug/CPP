@@ -39,16 +39,13 @@ int				Form::getGradetoExec() const {
 }
 
 void			Form::beSigned(Bureaucrat &B) {
-	try {
-		if (B.getGrade() > _grade_to_sign) {
-			throw GradeTooLowException();
-		}
+	if (B.getGrade() > _grade_to_sign) {
+		throw GradeTooLowException();
 	}
-	catch (GradeTooLowException& L) {
-		std::cout << L.what() << std::endl;
-		return ;
-	}
-	_signature = true;
+	if (_signature)
+		throw FormAlreadySignedException();
+	else
+		_signature = true;
 }
 
 std::ostream&	operator<<(std::ostream &o, Form const &i) {
