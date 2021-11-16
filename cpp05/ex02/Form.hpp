@@ -13,8 +13,8 @@ class Form {
 		Form&	operator=(const Form &a);
 		bool			getSignature() const;
 		std::string const &	getName() const;
-		int				getGradetoSign() const;
-		int				getGradetoExec() const;
+		int	const		getGradetoSign() const;
+		int	const		getGradetoExec() const;
 		void			beSigned(Bureaucrat & B);
 		void			execute(Bureaucrat const & executor) const;
 		virtual void	doAction() const = 0;

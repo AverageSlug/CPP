@@ -30,11 +30,11 @@ std::string const &	Form::getName() const {
 	return (_name);
 }
 
-int				Form::getGradetoSign() const {
+int	const		Form::getGradetoSign() const {
 	return (_grade_to_sign);
 }
 
-int				Form::getGradetoExec() const {
+int	const		Form::getGradetoExec() const {
 	return (_grade_to_exec);
 }
 
