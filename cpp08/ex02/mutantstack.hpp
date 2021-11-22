@@ -6,13 +6,13 @@
 # include <iterator>
 
 template<typename T>
-class MutantStack : public std::stack<T, std::deque<T> > {
+class MutantStack : public std::stack<T> {
 	public:
 		MutantStack();
 		~MutantStack();
-		MutantStack(const MutantStack &cpy);
-		MutantStack& operator=(const MutantStack &a);
-		typedef typename std::deque<T>::iterator	iterator;
+		MutantStack(const MutantStack<T> &cpy);
+		MutantStack<T> &operator=(const MutantStack<T> &a);
+		typedef typename std::stack<T>::container_type::iterator	iterator;
 		#define cont c
 		iterator	begin();
 		iterator	end();
@@ -25,11 +25,11 @@ template<typename T>
 MutantStack<T>::~MutantStack() {}
 
 template<typename T>
-MutantStack<T>::MutantStack(const MutantStack &cpy) : std::stack<T>(cpy) {}
+MutantStack<T>::MutantStack(const MutantStack<T> &cpy) : std::stack<T>(cpy) {}
 
 template<typename T>
-MutantStack<T>	&MutantStack<T>::operator=(const MutantStack &a) {
-	*this = a;
+MutantStack<T>	&MutantStack<T>::operator=(const MutantStack<T> &a) {
+	this->c = a.c;
 	return (*this);
 }
 
