@@ -1,5 +1,6 @@
 #ifndef SPAN_HPP
 # define SPAN_HPP
+# include <algorithm>
 # include <vector>
 # include <iostream>
 
@@ -11,6 +12,7 @@ class Span {
 		Span(const Span &cpy);
 		Span&	operator=(const Span &a);
 		void	addNumber(int num);
+		void	addNumber(int begin, int end);
 		int		shortestSpan();
 		int		longestSpan();
 	private:

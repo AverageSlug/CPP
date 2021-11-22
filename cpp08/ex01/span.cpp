@@ -23,14 +23,22 @@ void	Span::addNumber(int num) {
 	_V.push_back(num);
 }
 
+void	Span::addNumber(int begin, int end) {
+	while (begin <= end) {
+		if (_V.size() >= _N)
+			throw std::exception();
+		_V.push_back(begin++);
+	}
+}
+
 int		Span::shortestSpan() {
 	if (_V.size() < 2)
 		throw std::exception();
 	int c_short = -1;
 	for (std::vector<int>::iterator itr = _V.begin(); itr < _V.end(); itr++) {
 		for (std::vector<int>::iterator itr2 = itr + 1; itr2 < _V.end(); itr2++) {
-			if (abs(*itr - *itr2) < c_short || c_short < 0)
-				c_short = abs(*itr - *itr2);
+			if (std::abs(*itr - *itr2) < c_short || c_short < 0)
+				c_short = std::abs(*itr - *itr2);
 		}
 	}
 	return (c_short);
@@ -42,8 +50,8 @@ int		Span::longestSpan() {
 	int c_long = -1;
 	for (std::vector<int>::iterator itr = _V.begin(); itr < _V.end(); itr++) {
 		for (std::vector<int>::iterator itr2 = itr + 1; itr2 < _V.end(); itr2++) {
-			if (abs(*itr - *itr2) > c_long || c_long < 0)
-				c_long = abs(*itr - *itr2);
+			if (std::abs(*itr - *itr2) > c_long || c_long < 0)
+				c_long = std::abs(*itr - *itr2);
 		}
 	}
 	return (c_long);

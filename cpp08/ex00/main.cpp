@@ -8,23 +8,30 @@ int main() {
 	cont.push_back(3);
 	try {
 		easyfind(cont, 1);
-		std::cout << "found 1" << std::endl;
+		std::cout << "1 Found" << std::endl;
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << "1 Not Found" << std::endl;
 	}
 	try {
-		easyfind(cont, 69420);
-		std::cout << "found 69420" << std::endl;
+		easyfind(cont, 2);
+		std::cout << "2 Found" << std::endl;
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << "2 Not Found" << std::endl;
 	}
 	try {
 		easyfind(cont, 3);
-		std::cout << "found 3" << std::endl;
+		std::cout << "3 Found" << std::endl;
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << "3 Not Found" << std::endl;
+	}
+	try {
+		easyfind(cont, 69420);
+		std::cout << "69420 Found" << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cerr << "69420 Not Found" << std::endl;
 	}
 }
